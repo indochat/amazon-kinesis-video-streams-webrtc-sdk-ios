@@ -1,7 +1,7 @@
 import Foundation
-import AWSCognitoIdentityProvider
+//import AWSCognitoIdentityProvider
 import AWSKinesisVideo
-import AWSMobileClient
+//import AWSMobileClient
 
 class SignInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var username: UITextField!
@@ -11,7 +11,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var forgotPasswordButton: UIButton!
     
-    var passwordAuthenticationCompletion: AWSTaskCompletionSource<AWSCognitoIdentityPasswordAuthenticationDetails>?
+//    var passwordAuthenticationCompletion: AWSTaskCompletionSource<AWSCognitoIdentityPasswordAuthenticationDetails>?
     var usernameText: String?
 
     override func viewDidLoad() {
@@ -34,23 +34,24 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func signInPressed(_ sender: AnyObject) {
-        if let username = self.username.text, let password = self.password.text {
-            AWSMobileClient.default().signIn(username: username, password: password) { (signInResult, error) in
-
-                DispatchQueue.main.async {
-                    if let error = error {
-                        self.showError(error: error)
-                    } else if let signInResult = signInResult {
-                        switch (signInResult.signInState) {
-                        case .signedIn:
-                            self.showSignInError(signInResult: signInResult)
-                        default:
-                            self.showSignInError(signInResult: signInResult)
-                        }
-                    }
-                }
-            }
-        }
+        self.dismiss(animated: true, completion: nil)
+//        if let username = self.username.text, let password = self.password.text {
+//            AWSMobileClient.default().signIn(username: username, password: password) { (signInResult, error) in
+//
+//                DispatchQueue.main.async {
+//                    if let error = error {
+//                        self.showError(error: error)
+//                    } else if let signInResult = signInResult {
+//                        switch (signInResult.signInState) {
+//                        case .signedIn:
+//                            self.showSignInError(signInResult: signInResult)
+//                        default:
+//                            self.showSignInError(signInResult: signInResult)
+//                        }
+//                    }
+//                }
+//            }
+//        }
     }
 
     func showError(error: Error) {
@@ -61,16 +62,16 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         self.present(alertController, animated: true, completion: nil)
     }
 
-    func showSignInError(signInResult: SignInResult) {
-        switch (signInResult.signInState) {
-        case .signedIn:
-            self.dismiss(animated: true, completion: nil)
-        default:
-            let alertController = UIAlertController(title: "Login Error", message: "There was an error with your login, please contact user support", preferredStyle: .alert)
-
-            alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-
-            self.present(alertController, animated: true, completion: nil)
-        }
-    }
+//    func showSignInError(signInResult: SignInResult) {
+//        switch (signInResult.signInState) {
+//        case .signedIn:
+//            self.dismiss(animated: true, completion: nil)
+//        default:
+//            let alertController = UIAlertController(title: "Login Error", message: "There was an error with your login, please contact user support", preferredStyle: .alert)
+//
+//            alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+//
+//            self.present(alertController, animated: true, completion: nil)
+//        }
+//    }
 }

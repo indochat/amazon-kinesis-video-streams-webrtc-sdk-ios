@@ -1,0 +1,46 @@
+PODS:
+  - AWSCognitoIdentityProvider (2.12.3):
+    - AWSCognitoIdentityProviderASF (= 1.0.1)
+    - AWSCore (= 2.12.3)
+  - AWSCognitoIdentityProviderASF (1.0.1)
+  - AWSCore (2.12.3)
+  - AWSKinesisVideo (2.12.3):
+    - AWSCore (= 2.12.3)
+  - AWSKinesisVideoSignaling (2.12.3):
+    - AWSCore (= 2.12.3)
+  - CommonCryptoModule (1.0.2)
+  - GoogleWebRTC (1.1.29400)
+  - Starscream (3.1.1)
+
+DEPENDENCIES:
+  - AWSCognitoIdentityProvider
+  - AWSKinesisVideo
+  - AWSKinesisVideoSignaling
+  - CommonCryptoModule
+  - GoogleWebRTC (~> 1.1)
+  - Starscream (~> 3.0)
+
+SPEC REPOS:
+  trunk:
+    - AWSCognitoIdentityProvider
+    - AWSCognitoIdentityProviderASF
+    - AWSCore
+    - AWSKinesisVideo
+    - AWSKinesisVideoSignaling
+    - CommonCryptoModule
+    - GoogleWebRTC
+    - Starscream
+
+SPEC CHECKSUMS:
+  AWSCognitoIdentityProvider: 3561d7cdbe7343a808bd7b2ce61da5b0c27b98e5
+  AWSCognitoIdentityProviderASF: f94f1a502e72ef3d0a1de93e10bf7a79c8698118
+  AWSCore: a4b4aeb414bdfd55a5e8879adb4985c46da157d6
+  AWSKinesisVideo: b8e7d7940485958dc5af3dd806aaf07a62b628fa
+  AWSKinesisVideoSignaling: 81e17da108ffb87e6fd0afe80391e12281241dda
+  CommonCryptoModule: 63a68b57abed79655b3a01011419bf037a05b0a0
+  GoogleWebRTC: cfb83bc346435a17fe06bb05f04ad826b858a7fb
+  Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
+
+PODFILE CHECKSUM: ef964c64a494b74f54d7584a4fb572ace9fbe7cc
+
+COCOAPODS: 1.8.3

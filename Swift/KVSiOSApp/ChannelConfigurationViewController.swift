@@ -1,18 +1,18 @@
 import AWSCore
-import AWSCognitoIdentityProvider
+//import AWSCognitoIdentityProvider
 import AWSKinesisVideo
 import AWSKinesisVideoSignaling
-import AWSMobileClient
+//import AWSMobileClient
 import Foundation
 import WebRTC
 
 class ChannelConfigurationViewController: UIViewController, UITextFieldDelegate {
 
-    var userListDevicesResponse: AWSCognitoIdentityUserListDevicesResponse?
-    var user: AWSCognitoIdentityUser?
-    var pool: AWSCognitoIdentityUserPool?
-    var userDetailsResponse: AWSCognitoIdentityUserGetDetailsResponse?
-    var userSessionResponse: AWSCognitoIdentityUserSession?
+//    var userListDevicesResponse: AWSCognitoIdentityUserListDevicesResponse?
+//    var user: AWSCognitoIdentityUser?
+//    var pool: AWSCognitoIdentityUserPool?
+//    var userDetailsResponse: AWSCognitoIdentityUserGetDetailsResponse?
+//    var userSessionResponse: AWSCognitoIdentityUserSession?
     var AWSCredentials: AWSCredentials?
     var wssURL: URL?
     var signalingClient: SignalingClient?
@@ -21,7 +21,7 @@ class ChannelConfigurationViewController: UIViewController, UITextFieldDelegate 
     var webRTCClient: WebRTCClient?
     var iceServerList: [AWSKinesisVideoSignalingIceServer]?
     var vc: VideoViewController?
-    var awsRegionType: AWSRegionType = .Unknown
+    var awsRegionType: AWSRegionType = .APSoutheast1
     var signalingConnected: Bool = false
     var sendAudioEnabled: Bool = true
     var remoteSenderClientId: String?
@@ -30,9 +30,18 @@ class ChannelConfigurationViewController: UIViewController, UITextFieldDelegate 
     }()
 
     @IBOutlet var connectedLabel: UILabel!
-    @IBOutlet var channelName: UITextField!
+    @IBOutlet var channelName: UITextField! {
+        didSet {
+            self.channelName.text = "testChannel"
+        }
+    }
     @IBOutlet var clientID: UITextField!
-    @IBOutlet var regionName: UITextField!
+    @IBOutlet var regionName: UITextField! {
+        didSet {
+            self.regionName.text = "ap-southeast-1"
+        }
+    }
+    
     @IBOutlet var isAudioEnabled: UISwitch!
 
     @IBOutlet weak var connectAsMasterButton: UIButton!
@@ -89,7 +98,7 @@ class ChannelConfigurationViewController: UIViewController, UITextFieldDelegate 
     }
 
     @IBAction func signOut(_ sender: AnyObject) {
-        AWSMobileClient.default().signOut()
+//        AWSMobileClient.default().signOut()
         let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         self.present((mainStoryBoard.instantiateViewController(withIdentifier: "signinController") as? UINavigationController)!, animated: true, completion: nil)
     }
@@ -131,7 +140,7 @@ class ChannelConfigurationViewController: UIViewController, UITextFieldDelegate 
             print("Generated clientID is \(self.localSenderId)")
         }
         // Kinesis Video Client Configuration
-        let configuration = AWSServiceConfiguration(region: self.awsRegionType, credentialsProvider: AWSMobileClient.default())
+        let configuration = AWSServiceConfiguration(region: self.awsRegionType, credentialsProvider: AWSStaticCredentialsProvider.init(accessKey: "AKIA3QWF3OFZCYCTT5OU", secretKey: "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"/*AWSMobileClient.default()*/))
         AWSKinesisVideo.register(with: configuration!, forKey: awsKinesisVideoKey)
 
         retrieveChannelARN(channelName: channelNameValue)
@@ -187,6 +196,7 @@ class ChannelConfigurationViewController: UIViewController, UITextFieldDelegate 
                 print("Channel ARN : ", task.result?.channelARN)
             }
         }).waitUntilFinished()
+        
         if (self.channelARN == nil) {
             let alertController = UIAlertController(title: "Unable to create channel",
                                                     message: "Please validate all the input fields",
@@ -270,9 +280,9 @@ class ChannelConfigurationViewController: UIViewController, UITextFieldDelegate 
                     print("Error: Unknown endpoint protocol ", endpoint.protocols, "for endpoint" + endpoint.description())
                 }
             }
-            AWSMobileClient.default().getAWSCredentials { credentials, _ in
-                self.AWSCredentials = credentials
-            }
+//            AWSMobileClient.default().getAWSCredentials { credentials, _ in
+//                self.AWSCredentials = credentials
+//            }
 
             var httpURlString = (wssResourceEndpointItem?.resourceEndpoint!)!
                 + "?X-Amz-ChannelARN=" + self.channelARN!
@@ -284,9 +294,9 @@ class ChannelConfigurationViewController: UIViewController, UITextFieldDelegate 
             usleep(5)
             self.wssURL = KVSSigner
                 .sign(signRequest: httpRequestURL!,
-                      secretKey: (self.AWSCredentials?.secretKey)!,
-                      accessKey: (self.AWSCredentials?.accessKey)!,
-                      sessionToken: (self.AWSCredentials?.sessionKey)!,
+                      secretKey: "VYsSY3EfaVb7GPdxxKhDxuRuW2INyRGKlxys43vl"/*(self.AWSCredentials?.secretKey)!*/,
+                      accessKey: "AKIA3QWF3OFZCYCTT5OU"/*(self.AWSCredentials?.accessKey)!*/,
+                      sessionToken: "",//(self.AWSCredentials?.sessionKey)!,
                       wssRequest: wssRequestURL!,
                       region: region)
 
@@ -299,7 +309,7 @@ class ChannelConfigurationViewController: UIViewController, UITextFieldDelegate 
             let configuration =
                 AWSServiceConfiguration(region: self.awsRegionType,
                                         endpoint: endpoint,
-                                        credentialsProvider: AWSMobileClient.default())
+                                        credentialsProvider: AWSStaticCredentialsProvider.init(accessKey: "AKIA3QWF3OFZCYCTT5OU", secretKey: "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") /*AWSMobileClient.default()*/)
             AWSKinesisVideoSignaling.register(with: configuration!, forKey: awsKinesisVideoKey)
             let kvsSignalingClient = AWSKinesisVideoSignaling(forKey: awsKinesisVideoKey)
 

@@ -51,13 +51,11 @@
 		70AB1662239EFD9800EA8E2C /* ChannelConfigurationViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AB1661239EFD9800EA8E2C /* ChannelConfigurationViewControllerTest.swift */; };
 		70AB1664239F24C900EA8E2C /* SignInViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AB1663239F24C900EA8E2C /* SignInViewControllerTests.swift */; };
 		70AB166623A06ED000EA8E2C /* SignUpViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AB166523A06ED000EA8E2C /* SignUpViewControllerUITests.swift */; };
-		70AB166823A2E1A900EA8E2C /* AWSAuthCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70AB166723A2E1A800EA8E2C /* AWSAuthCore.framework */; };
 		70AB166A23A2E1A900EA8E2C /* AWSCognitoIdentityProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70AB166923A2E1A900EA8E2C /* AWSCognitoIdentityProvider.framework */; };
 		70AB166C23A2E1A900EA8E2C /* AWSCognitoIdentityProviderASF.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70AB166B23A2E1A900EA8E2C /* AWSCognitoIdentityProviderASF.framework */; };
 		70AB166E23A2E1A900EA8E2C /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70AB166D23A2E1A900EA8E2C /* AWSCore.framework */; };
 		70AB167023A2E1A900EA8E2C /* AWSKinesisVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70AB166F23A2E1A900EA8E2C /* AWSKinesisVideo.framework */; };
 		70AB167223A2E1A900EA8E2C /* AWSKinesisVideoSignaling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70AB167123A2E1A900EA8E2C /* AWSKinesisVideoSignaling.framework */; };
-		70AB167423A2E1A900EA8E2C /* AWSMobileClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70AB167323A2E1A900EA8E2C /* AWSMobileClient.framework */; };
 		70AB167623A2E1A900EA8E2C /* CommonCryptoModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70AB167523A2E1A900EA8E2C /* CommonCryptoModule.framework */; };
 		70AB167A23A2E1A900EA8E2C /* Pods_AWSKinesisVideoWebRTCDemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70AB167923A2E1A900EA8E2C /* Pods_AWSKinesisVideoWebRTCDemoApp.framework */; };
 		70AB167C23A2E1A900EA8E2C /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70AB167B23A2E1A900EA8E2C /* Starscream.framework */; };
@@ -168,13 +166,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70AB166823A2E1A900EA8E2C /* AWSAuthCore.framework in Frameworks */,
 				70AB166A23A2E1A900EA8E2C /* AWSCognitoIdentityProvider.framework in Frameworks */,
 				70AB166C23A2E1A900EA8E2C /* AWSCognitoIdentityProviderASF.framework in Frameworks */,
 				70AB166E23A2E1A900EA8E2C /* AWSCore.framework in Frameworks */,
 				70AB167023A2E1A900EA8E2C /* AWSKinesisVideo.framework in Frameworks */,
 				70AB167223A2E1A900EA8E2C /* AWSKinesisVideoSignaling.framework in Frameworks */,
-				70AB167423A2E1A900EA8E2C /* AWSMobileClient.framework in Frameworks */,
 				70AB167623A2E1A900EA8E2C /* CommonCryptoModule.framework in Frameworks */,
 				70AB167A23A2E1A900EA8E2C /* Pods_AWSKinesisVideoWebRTCDemoApp.framework in Frameworks */,
 				70AB167C23A2E1A900EA8E2C /* Starscream.framework in Frameworks */,
@@ -390,7 +386,7 @@
 				TargetAttributes = {
 					17FC2F7B1E258FC500174015 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = F468TZWNT7;
+						DevelopmentTeam = 42VABGX786;
 						LastSwiftMigration = 1020;
 					};
 					703513E32399DA0400376B66 = {
@@ -490,26 +486,22 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-AWSKinesisVideoWebRTCDemoApp/Pods-AWSKinesisVideoWebRTCDemoApp-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AWSAuthCore/AWSAuthCore.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSCognitoIdentityProvider/AWSCognitoIdentityProvider.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSCognitoIdentityProviderASF/AWSCognitoIdentityProviderASF.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSKinesisVideo/AWSKinesisVideo.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSKinesisVideoSignaling/AWSKinesisVideoSignaling.framework",
-				"${BUILT_PRODUCTS_DIR}/AWSMobileClient/AWSMobileClient.framework",
 				"${BUILT_PRODUCTS_DIR}/CommonCryptoModule/CommonCryptoModule.framework",
 				"${PODS_ROOT}/GoogleWebRTC/Frameworks/frameworks/WebRTC.framework",
 				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSAuthCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCognitoIdentityProvider.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCognitoIdentityProviderASF.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSKinesisVideo.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSKinesisVideoSignaling.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSMobileClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CommonCryptoModule.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WebRTC.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
@@ -526,26 +518,22 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-AWSKinesisVideoWebRTCDemoApp-AWSKinesisVideoWebRTCDemoAppUITests/Pods-AWSKinesisVideoWebRTCDemoApp-AWSKinesisVideoWebRTCDemoAppUITests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AWSAuthCore/AWSAuthCore.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSCognitoIdentityProvider/AWSCognitoIdentityProvider.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSCognitoIdentityProviderASF/AWSCognitoIdentityProviderASF.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSKinesisVideo/AWSKinesisVideo.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSKinesisVideoSignaling/AWSKinesisVideoSignaling.framework",
-				"${BUILT_PRODUCTS_DIR}/AWSMobileClient/AWSMobileClient.framework",
 				"${BUILT_PRODUCTS_DIR}/CommonCryptoModule/CommonCryptoModule.framework",
 				"${PODS_ROOT}/GoogleWebRTC/Frameworks/frameworks/WebRTC.framework",
 				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSAuthCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCognitoIdentityProvider.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCognitoIdentityProviderASF.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSKinesisVideo.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSKinesisVideoSignaling.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSMobileClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CommonCryptoModule.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WebRTC.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
@@ -787,7 +775,7 @@
 			baseConfigurationReference = F7B67040DCE56367CC40F204 /* Pods-AWSKinesisVideoWebRTCDemoApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = F468TZWNT7;
+				DEVELOPMENT_TEAM = 42VABGX786;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
