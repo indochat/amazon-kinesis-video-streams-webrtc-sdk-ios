@@ -3,7 +3,7 @@ platform :ios, '11.0'
 use_frameworks!
 
 target 'AWSKinesisVideoWebRTCDemoApp' do
-  pod 'AWSCognitoIdentityProvider'
+#  pod 'AWSCognitoIdentityProvider'
 #  pod 'AWSMobileClient'
   pod 'CommonCryptoModule'
   pod 'AWSKinesisVideo'
