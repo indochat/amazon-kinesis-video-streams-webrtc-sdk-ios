@@ -4,14 +4,12 @@ PODS:
     - AWSCore (= 2.12.3)
   - AWSKinesisVideoSignaling (2.12.3):
     - AWSCore (= 2.12.3)
-  - CommonCryptoModule (1.0.2)
   - GoogleWebRTC (1.1.29400)
   - Starscream (3.1.1)
 
 DEPENDENCIES:
   - AWSKinesisVideo
   - AWSKinesisVideoSignaling
-  - CommonCryptoModule
   - GoogleWebRTC (~> 1.1)
   - Starscream (~> 3.0)
 
@@ -20,7 +18,6 @@ SPEC REPOS:
     - AWSCore
     - AWSKinesisVideo
     - AWSKinesisVideoSignaling
-    - CommonCryptoModule
     - GoogleWebRTC
     - Starscream
 
@@ -28,10 +25,9 @@ SPEC CHECKSUMS:
   AWSCore: a4b4aeb414bdfd55a5e8879adb4985c46da157d6
   AWSKinesisVideo: b8e7d7940485958dc5af3dd806aaf07a62b628fa
   AWSKinesisVideoSignaling: 81e17da108ffb87e6fd0afe80391e12281241dda
-  CommonCryptoModule: 63a68b57abed79655b3a01011419bf037a05b0a0
   GoogleWebRTC: cfb83bc346435a17fe06bb05f04ad826b858a7fb
   Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
 
-PODFILE CHECKSUM: f3169c8547646f527620e1fd7bcd9e43bc643b6c
+PODFILE CHECKSUM: 5f9d63586ad9f82c77c07f807b9196f97e50feed
 
 COCOAPODS: 1.8.3

@@ -5,7 +5,7 @@ use_frameworks!
 target 'AWSKinesisVideoWebRTCDemoApp' do
 #  pod 'AWSCognitoIdentityProvider'
 #  pod 'AWSMobileClient'
-  pod 'CommonCryptoModule'
+#  pod 'CommonCryptoModule'
   pod 'AWSKinesisVideo'
   pod 'AWSKinesisVideoSignaling'
   pod 'GoogleWebRTC', '~> 1.1'
